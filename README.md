@@ -7,10 +7,11 @@ Este aplicativo (app) que simula partidas de futebol foi desenvolvido nativament
 ## Dia 1 
 - 20h | Lançamento da Sportheca Mobile Dev Week
 Uma live com a presença de Gilberto Silva, Penta Campeão Mundial com a Seleção Brasileira, CEOs da DIO, Sportheca e experts para discutir como tecnologia e esporte tem se aproximado cada vez mais, além de mostrar como funcionará esta super semana.
+<br>
 
-- 21h | 1ª Aula: Desenvolvimento Mobile Nativo Para Android
+- 21h | 1ª Aula: Desenvolvimento Mobile Nativo Para Android 
   - [desenvolvimento-mobile-nativo-para-android](https://github.com/leandro-ikehara/matches-simulator-app/tree/desenvolvimento-mobile-nativo-para-android)
-  
+
 Nesta aula fornecemos uma visão geral da área de Desenvolvimento Mobile, com ênfase no desenvolvimento de Apps Android Nativos. Com isso, o ambiente de desenvolvimento com o Android Studio é configurado na prática, possibilitando a construção de aplicativos nas linguagens Java e Kotlin. Por fim, criamos nosso primeiro App Nativo! E aí, bora tirar suas ideias do papel e colocá-las na Google Play!?
 
 ## Dia 2
@@ -27,6 +28,6 @@ Agora é a hora da verdade! Vamos implementar nossos eventos e interações de u
 
 ## Dia 4 
 - 10h | 4ª Aula liberada: Explorando o Firebase Para Apps Android Resilientes
-  - [explorando-o-firebase-para-apps-android-resilientes]((https://github.com/leandro-ikehara/matches-simulator-app/tree/explorando-o-firebase-para-apps-android-resilientes)
+  - [explorando-o-firebase-para-apps-android-resilientes](https://github.com/leandro-ikehara/matches-simulator-app/tree/explorando-o-firebase-para-apps-android-resilientes)
 
 Conheça algumas das possibilidades oferecidas pelo Firebase. Nesse contexto, vamos explorar alguns recursos interessantes dessa plataforma, como o Analytics, Crashlytics, entre outros. Com isso, nosso App estará muito mais preparado para uma publicação em produção (Google Play), pois eventuais crashes e insights relacionados ao seu uso poderão ser monitorados proativamente. 
