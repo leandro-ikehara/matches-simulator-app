@@ -1,4 +1,4 @@
-package me.dio.sportheca.simulator
+package me.dio.sportheca.simulator.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
