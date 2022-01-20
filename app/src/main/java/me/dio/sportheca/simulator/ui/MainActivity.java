@@ -3,23 +3,22 @@ package me.dio.sportheca.simulator.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.google.gson.Gson;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Random;
 
 import me.dio.sportheca.simulator.R;
 import me.dio.sportheca.simulator.data.MatchesAPI;
 import me.dio.sportheca.simulator.databinding.ActivityMainBinding;
 import me.dio.sportheca.simulator.domain.Match;
-import me.dio.sportheca.simulator.domain.Team;
 import me.dio.sportheca.simulator.ui.adapter.MatchesAdapter;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private MatchesAPI matchesApi;
-    private RecyclerView.Adapter matchesAdapter;
+    private MatchesAdapter matchesAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,18 +69,23 @@ public class MainActivity extends AppCompatActivity {
             view.animate().rotationBy(360).setDuration(500).setListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
-
+                    Random random = new Random();
+                    for (int i = 0; i < matchesAdapter.getItemCount(); i++) {
+                        Match match = matchesAdapter.getMatches().get(i);
+                        match.getHomeTeam().setScore(random.nextInt(match.getHomeTeam().getStars() + 1));
+                        match.getAwayTeam().setScore(random.nextInt(match.getAwayTeam().getStars() + 1));
+                        matchesAdapter.notifyItemChanged(i);
+                    }
                 }
             });
         });
-
     }
 
     private void findMatchesFromApi() {
         binding.srlMatches.setRefreshing(true);
         matchesApi.getMatches().enqueue(new Callback<List<Match>>() {
             @Override
-            public void onResponse(Call<List<Match>> call, Response<List<Match>> response) {
+            public void onResponse(@NotNull Call<List<Match>> call, @NotNull Response<List<Match>> response) {
                 if(response.isSuccessful()) {
                     List<Match> matches = response.body();
 //                    Log.i("SIMULATOR", "Funcionou! Partidas = " + matches.size());
@@ -93,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 binding.srlMatches.setRefreshing(false);
             }
             @Override
-            public void onFailure(Call<List<Match>> call, Throwable t) {
+            public void onFailure(@NotNull Call<List<Match>> call, @NotNull Throwable t) {
                 showErrorMessage();
                 binding.srlMatches.setRefreshing(false);
             }
@@ -102,9 +106,5 @@ public class MainActivity extends AppCompatActivity {
 
     private void showErrorMessage() {
         Snackbar.make(binding.fabSimulate, R.string.error_api, Snackbar.LENGTH_LONG).show();
-
-
     }
-
-
 }
