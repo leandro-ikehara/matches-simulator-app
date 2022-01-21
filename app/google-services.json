@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "485660304611",
+    "project_id": "matches-simulator-sportheca",
+    "storage_bucket": "matches-simulator-sportheca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485660304611:android:30eb4d12e58f6f173f51d6",
+        "android_client_info": {
+          "package_name": "me.dio.sportheca.simulator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485660304611-7rh35bags15uka4oms9e3mch8poa7uik.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJfjzviWUivc9Evx9A_776ost6ZhgStXY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485660304611-7rh35bags15uka4oms9e3mch8poa7uik.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
